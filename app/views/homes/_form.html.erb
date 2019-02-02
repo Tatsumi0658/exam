@@ -1,0 +1,11 @@
+<%= form_for(@home) do |f| %>
+  <%= f.label :rent %>
+  <%= f.text_field :rent %>円
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>年
+  <%= f.label :remarks %>
+  <%= f.text_area :remarks %>
+  <%= f.submit %>
+<% end %>

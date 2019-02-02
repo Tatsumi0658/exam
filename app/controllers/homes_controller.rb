@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :set_homes only:[:show, :edit, :update, :destroy]
+  before_action :set_homes, only:[:show, :edit, :update, :destroy]
   def index
     @homes = Home.all
   end
