@@ -1,4 +1,10 @@
+<%= @home.name %>
 <%= @home.rent %>
 <%= @home.address %>
 <%= @home.age %>
 <%= @home.remarks %>
+<% @stations.each do |st| %>
+  <%= st.line %>
+  <%= st.station %>
+  <%= st.walk %>
+<% end %>

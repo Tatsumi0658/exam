@@ -1,7 +1,11 @@
-<%= @homes.each do |home| %>
+<% @homes.each do |home| %>
+  <%= home.name %>
   <%= home.rent %>
   <%= home.address %>
   <%= home.age %>
   <%= home.remarks %>
+  <%= link_to "詳細", home_path(home.id) %>
+  <%= link_to "編集", edit_home_path(home.id) %>
+  <%= link_to "削除", home_path(home.id), method: :delete %>
 <% end %>
 <%= link_to "物件を登録する", new_home_path %>

@@ -1,4 +1,6 @@
 <%= form_for @home , url: homes_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <%= f.label :rent %>
   <%= f.text_field :rent %>円
   <%= f.label :address %>
@@ -7,13 +9,15 @@
   <%= f.text_field :age %>年
   <%= f.label :remarks %>
   <%= f.text_area :remarks %>
-  <%= f.fields_for :stations do |st| %>
-    <%= st.label :line %>
-    <%= st.text_field :line %>
-    <%= st.label :station %>
-    <%= st.text_field :station %>
-    <%= st.label :walk %>
-    <%= st.text_field :walk %>
+  <% 2.times do |times| %>
+    <%= f.fields_for :stations do |st| %>
+      <%= st.label :line %>
+      <%= st.text_field :line %>
+      <%= st.label :station %>
+      <%= st.text_field :station %>
+      <%= st.label :walk %>
+      <%= st.text_field :walk %>
+    <% end %>
   <% end %>
   <%= f.submit %>
 <% end %>

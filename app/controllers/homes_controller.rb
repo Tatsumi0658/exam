@@ -21,6 +21,7 @@ class HomesController < ApplicationController
   end
 
   def show
+    @stations = Station.where(home_id: set_homes.id).all
   end
 
   def edit
@@ -44,7 +45,7 @@ class HomesController < ApplicationController
 
   private
   def home_params
-    params.require(:home).permit(:rent, :address, :age, :remarks, stations_attributes: [:id, :line, :station, :walk])
+    params.require(:home).permit(:name, :rent, :address, :age, :remarks, stations_attributes: [:id, :line, :station, :walk])
   end
 
   #def st_params
