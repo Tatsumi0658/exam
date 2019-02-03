@@ -1,15 +1,14 @@
-<h1>物件登録</h1>
 <%= form_for @home , url: homes_path do |f| %>
   <div class="form-control">
-    <%= f.label :name %><br />
+    <%= f.label :name, "物件名" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="form-control">
-    <%= f.label :rent, "物件名" %><br />
+    <%= f.label :rent, "賃料" %><br />
     <%= f.text_field :rent %>円
   </div>
   <div class="form-control">
-    <%= f.label :address, "賃料" %><br />
+    <%= f.label :address, "住所" %><br />
     <%= f.text_field :address %>
   </div>
   <div class="form-control">
@@ -40,4 +39,3 @@
   <% end %>
   <%= f.submit "登録する" %>
 <% end %>
-<%= link_to "戻る", :back %>

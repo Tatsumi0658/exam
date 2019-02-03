@@ -1,6 +1,6 @@
 <div class="home_info">
   <p><span class="b">物件名:</span>&nbsp;<%= @home.name %></p>
-  <p><span class="b">賃料:</span>&nbsp;<%= @home.rent %>円</p>
+  <p><span class="b">賃料:</span>&nbsp;<%= @home.rent.to_s(:delimited) %>円</p>
   <p><span class="b">住所:</span>&nbsp;<%= @home.address %></p>
   <p><span class="b">築年数</span>&nbsp;<%= @home.age %></p>
   <p><span class="b">備考</span>&nbsp;<%= @home.remarks %></p>

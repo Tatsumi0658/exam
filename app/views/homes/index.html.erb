@@ -10,7 +10,7 @@
   <% @homes.each do |home| %>
     <tr>
       <td><%= home.name %></td>
-      <td><%= home.rent %>円</td>
+      <td><%= home.rent.to_s(:delimited) %>円</td>
       <td><%= home.address %></td>
       <td><%= home.age %>年</td>
       <td><%= home.remarks %></td>
