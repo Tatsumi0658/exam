@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190203072058) do
+ActiveRecord::Schema.define(version: 20190203091937) do
 
   create_table "homes", force: :cascade do |t|
-    t.integer  "rent",       default: 0, null: false
-    t.string   "address",                null: false
-    t.integer  "age",        default: 0, null: false
+    t.integer  "rent",       null: false
+    t.string   "address",    null: false
+    t.integer  "age",        null: false
     t.text     "remarks"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "name",                   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name",       null: false
   end
 
   create_table "stations", force: :cascade do |t|
