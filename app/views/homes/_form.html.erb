@@ -7,5 +7,13 @@
   <%= f.text_field :age %>年
   <%= f.label :remarks %>
   <%= f.text_area :remarks %>
+    <%= fields_for @home.station do |st| %>
+      <%= st.label :line %>
+      <%= st.text_field :line %>
+      <%= st.label :station %>
+      <%= st.text_field :station %>
+      <%= st.label :walking %>
+      <%= st.text_field :walking %>
+    <% end %>
   <%= f.submit %>
 <% end %>
