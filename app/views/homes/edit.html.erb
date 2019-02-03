@@ -1,5 +1,5 @@
 <h1>物件編集</h1>
-<%= form_for @home , url: homes_path do |f| %>
+<%= form_for @home do |f| %>
   <div class="form-control">
     <%= f.label :name, "物件名" %><br />
     <%= f.text_field :name %>
@@ -38,5 +38,6 @@
   <% end %>
   <%= f.submit "登録する" %>
 <% end %>
-<%= link_to "詳細",  home_path(@home.id) %>
+<br />
+<%= link_to "詳細",  home_path(@home.id) %>&nbsp;|
 <%= link_to "戻る", :back %>
