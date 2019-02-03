@@ -6,15 +6,16 @@ class HomesController < ApplicationController
 
   def new
     @home = Home.new
+    @home.stations.build
+    #@station = Station.new
   end
 
   def create
     @home = Home.new(home_params)
+    #@station = Station.new(st_params)
     if @home.save
       redirect_to homes_path
-      flash[:success] = "新規追加しました"
     else
-      flash[:danger] = "失敗しました"
       render :new
     end
   end
@@ -43,8 +44,12 @@ class HomesController < ApplicationController
 
   private
   def home_params
-    params.require(:home).permit(:integer, :address, :age, :remarks)
+    params.require(:home).permit(:rent, :address, :age, :remarks, stations_attributes: [:id, :line, :station, :walk])
   end
+
+  #def st_params
+  #  params.require(:station).permit(:line, :station, :walk)
+  #end
 
   def set_homes
     @home = Home.find(params[:id])
