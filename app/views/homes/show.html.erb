@@ -1,10 +1,18 @@
-<%= @home.name %>
-<%= @home.rent %>
-<%= @home.address %>
-<%= @home.age %>
-<%= @home.remarks %>
-<% @stations.each do |st| %>
-  <%= st.line %>
-  <%= st.station %>
-  <%= st.walk %>
+<div class="home_info">
+  <p><span class="b">物件名:</span>&nbsp;<%= @home.name %></p>
+  <p><span class="b">賃料:</span>&nbsp;<%= @home.rent %></p>
+  <p><span class="b">住所:</span>&nbsp;<%= @home.address %></p>
+  <p><span class="b">築年数</span>&nbsp;<%= @home.age %></p>
+  <p><span class="b">備考</span>&nbsp;<%= @home.remarks %></p>
+</div>
+<hr />
+<% @stations.each_with_index do |st, i| %>
+  <h3>最寄り駅<%= "#{i+1}" %></h3>
+  <div class="station_info">
+    <p><span class="b">路線名</span>&nbsp;<%= st.line %></p>
+    <p><span class="b">駅名</span>&nbsp;<%= st.station %></p>
+    <p><span class="b">徒歩分数</span>&nbsp;<%= st.walk %></p>
+  </div>
 <% end %>
+<%= link_to "編集" , edit_home_path %>&nbsp;|
+<%= link_to "戻る" , :back %>

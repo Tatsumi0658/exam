@@ -1,0 +1,16 @@
+html, body{
+  margin:0;
+  padding:0;
+}
+.container{
+  margin:2rem;
+}
+.home_info, .station_info{
+  margin:0 3rem;
+}
+.b{
+  font-weight:bold;
+}
+p{
+  margin: 1.5rem 0;
+}
