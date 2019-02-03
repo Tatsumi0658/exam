@@ -1,11 +1,22 @@
-<% @homes.each do |home| %>
-  物件名：<%= home.name %></p>
-  <%= home.rent %>
-  <%= home.address %>
-  <%= home.age %>
-  <%= home.remarks %>
-  <%= link_to "詳細", home_path(home.id) %>
-  <%= link_to "編集", edit_home_path(home.id) %>
-  <%= link_to "削除", home_path(home.id), method: :delete %>
-<% end %>
+<h1>物件一覧</h1>
+<table>
+  <tr>
+    <th>物件名</th>
+    <th>賃料</th>
+    <th>住所</th>
+    <th>築年数</th>
+    <th>備考</th>
+  </tr>
+  <% @homes.each do |home| %>
+    <tr>
+      <td><%= home.name %></td>
+      <td><%= home.rent %>円</td>
+      <td><%= home.address %></td>
+      <td><%= home.age %>年</td>
+      <td><%= home.remarks %></td>
+      <td><%= link_to "詳細", home_path(home.id) %></td>
+      <td><%= link_to "編集", edit_home_path(home.id) %></td>
+      <td><%= link_to "削除", home_path(home.id), method: :delete %></td>
+  <% end %>
+</table>
 <%= link_to "物件を登録する", new_home_path %>
