@@ -1,5 +1,10 @@
 <h1>物件登録</h1>
 <%= form_for @home , url: homes_path do |f| %>
+  <% if @home.errors.any? %>
+    <% @home.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  <% end %>
   <div class="form-control">
     <%= f.label :name, "物件名" %><br />
     <%= f.text_field :name %>
