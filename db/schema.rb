@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190203091937) do
+ActiveRecord::Schema.define(version: 20190203072058) do
 
   create_table "homes", force: :cascade do |t|
     t.integer  "rent",       null: false

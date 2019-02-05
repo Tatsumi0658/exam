@@ -3,5 +3,5 @@ class Home < ApplicationRecord
   validates :address, presence: true
   validates :age, presence: true
   has_many :stations, inverse_of: :home
-  accepts_nested_attributes_for :stations, allow_destroy: true
+  accepts_nested_attributes_for :stations, allow_destroy: true, reject_if: :all_blank
 end
