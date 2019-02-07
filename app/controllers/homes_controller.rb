@@ -6,7 +6,7 @@ class HomesController < ApplicationController
 
   def new
     @home = Home.new
-    @home.stations.build
+    2.times{ @home.stations.build }
   end
 
   def create
